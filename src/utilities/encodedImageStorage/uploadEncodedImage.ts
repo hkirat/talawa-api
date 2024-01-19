@@ -3,10 +3,11 @@ import * as fs from "fs";
 import { writeFile } from "fs/promises";
 import { encodedImageExtentionCheck } from "./encodedImageExtensionCheck";
 import { errors, requestContext } from "../../libraries";
-import { INVALID_FILE_TYPE } from "../../constants";
+import { INVALID_FILE_SIZE, INVALID_FILE_TYPE } from "../../constants";
 import { EncodedImage } from "../../models/EncodedImage";
 import path from "path";
 import { deletePreviousImage } from "./deletePreviousImage";
+import { encodedImageSizeCheck } from "./encodedImageSizeCheck";
 
 export const uploadEncodedImage = async (
   encodedImageURL: string,
@@ -19,6 +20,16 @@ export const uploadEncodedImage = async (
       requestContext.translate(INVALID_FILE_TYPE.MESSAGE),
       INVALID_FILE_TYPE.CODE,
       INVALID_FILE_TYPE.PARAM
+    );
+  }
+
+  const isValidSize = encodedImageSizeCheck(encodedImageURL)
+
+  if (!isValidSize) {
+    throw new errors.InvalidFileSizeError(
+      requestContext.translate(INVALID_FILE_SIZE.MESSAGE),
+      INVALID_FILE_SIZE.CODE,
+      INVALID_FILE_SIZE.PARAM
     );
   }
 

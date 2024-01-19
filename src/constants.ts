@@ -100,6 +100,12 @@ export const INVALID_FILE_TYPE = {
   PARAM: "internalServerError",
 };
 
+export const INVALID_FILE_SIZE = {
+  MESSAGE: "invalid.fileSize",
+  CODE: "internalServerError",
+  PARAM: "internalServerError",
+};
+
 export const INVALID_ROLE_TYPE = {
   DESC: "Invalid Role Type",
   MESSAGE: "invalid.roleType",
@@ -431,6 +437,8 @@ export const BASE_URL = `http://localhost:${process.env.port || 4000}/`;
 export const ACCESS_TOKEN_SECRET = ENV.ACCESS_TOKEN_SECRET;
 
 export const REFRESH_TOKEN_SECRET = ENV.REFRESH_TOKEN_SECRET;
+
+export const MAX_FILE_SIZE_KB = ENV.MAX_FILE_SIZE_KB;
 
 export const MONGO_DB_URL = ENV.MONGO_DB_URL;
 

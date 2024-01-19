@@ -21,6 +21,7 @@
   "post.notFound": "Post not found",
   "group.notFound": "Group not found",
   "invalid.fileType": "Invalid file type",
+  "invalid.fileSize": "Invalid file size",
   "invalid.refreshToken": "Invalid refresh token",
   "invalid.credentials": "Invalid credentials",
   "registrant.alreadyExist": "Already registered for the event",

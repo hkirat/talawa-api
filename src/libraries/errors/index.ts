@@ -16,3 +16,5 @@ export * from "./validationError";
 export * from "./inputValidationError";
 // Used for File extension check
 export * from "./invalidFileTypeError";
+// Used for File size check
+export * from "./invalidFileSizeError"
